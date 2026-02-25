@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ViaBenfits Test Suite" verbose="2" parallel="methods" thread-count="3">
+    
+    <listeners>
+        <listener class-name="com.viabenfits.listeners.TestListener"/>
+    </listeners>
+    
+    <test name="ViaBenfits Login Tests">
+        <classes>
+            <class name="com.viabenfits.tests.LoginTest">
+                <methods>
+                    <include name="loginPageSmoke"/>
+                    <include name="signIn"/>
+                    <include name="login"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+</suite>
