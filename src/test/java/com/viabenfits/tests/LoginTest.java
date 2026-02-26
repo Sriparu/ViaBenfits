@@ -28,6 +28,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test(description = "Simple sign-in test")
+    //This is test to verify git push
     public void signIn() {
         loginActions.clickSignIn().click();
     }
