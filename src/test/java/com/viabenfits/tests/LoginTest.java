@@ -9,6 +9,9 @@ import com.viabenfits.base.BaseTest;
 import com.viabenfits.listeners.TestListener;
 import org.testng.annotations.BeforeMethod;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import java.time.Duration;
 
 @Listeners(TestListener.class)
 public class LoginTest extends BaseTest {
@@ -30,11 +33,14 @@ public class LoginTest extends BaseTest {
     @Test(description = "Simple sign-in test")
     //This is test to verify git push
     public void signIn() {
+
         loginActions.clickSignIn().click();
     }
 
     @Test(description = "Simple login test")
     public void login() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(loginActions.clickSignIn()));
         loginActions.clickSignIn().click();
     }
 }
