@@ -1,19 +1,22 @@
 package com.viabenfits.factory;
 
-import com.viabenfits.utils.ConfigReader;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import com.viabenfits.utils.ConfigReader;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class DriverFactory {
 
     private static final ThreadLocal<WebDriver> TL_DRIVER = new ThreadLocal<>();
 
     public static WebDriver createDriver() {
-        String browser = ConfigReader.getBrowser().toLowerCase();
+        //String browser = ConfigReader.getBrowser().toLowerCase();
+        String browser = System.getProperty("browser");
         WebDriver driver;
 
         switch (browser) {
